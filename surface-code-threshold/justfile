@@ -1,0 +1,16 @@
+# E-002 recipes. `just setup` once, `just smoke` to prove the stack,
+# `just run` for the full sweep (resumable), `just plot` for the figure.
+
+setup:
+    uv sync
+
+smoke:
+    uv run python threshold.py --smoke
+
+run:
+    uv run python threshold.py
+
+plot:
+    uv run python plot.py
+
+test: smoke
